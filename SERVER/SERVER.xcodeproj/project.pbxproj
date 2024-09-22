@@ -11,6 +11,11 @@
 		7B1A8FBE2CA061DC003F9F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7B1A8FB92CA061DC003F9F21 /* Assets.xcassets */; };
 		7B1A8FBF2CA061DC003F9F21 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FBA2CA061DC003F9F21 /* ContentView.swift */; };
 		7B1A8FC02CA061DC003F9F21 /* SERVERApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FBB2CA061DC003F9F21 /* SERVERApp.swift */; };
+		7B1A8FC62CA06470003F9F21 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FC52CA06470003F9F21 /* Image.swift */; };
+		7B1A8FC92CA064B0003F9F21 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FC82CA064B0003F9F21 /* NavigationRouter.swift */; };
+		7B1A8FCB2CA064C3003F9F21 /* NavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FCA2CA064C3003F9F21 /* NavigationHandler.swift */; };
+		7B1A8FCF2CA06521003F9F21 /* ClientState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FCE2CA06521003F9F21 /* ClientState.swift */; };
+		7B1A8FD22CA06556003F9F21 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FD12CA06556003F9F21 /* NetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		7B1A8FB92CA061DC003F9F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7B1A8FBA2CA061DC003F9F21 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7B1A8FBB2CA061DC003F9F21 /* SERVERApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SERVERApp.swift; sourceTree = "<group>"; };
+		7B1A8FC52CA06470003F9F21 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		7B1A8FC82CA064B0003F9F21 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
+		7B1A8FCA2CA064C3003F9F21 /* NavigationHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHandler.swift; sourceTree = "<group>"; };
+		7B1A8FCE2CA06521003F9F21 /* ClientState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientState.swift; sourceTree = "<group>"; };
+		7B1A8FD12CA06556003F9F21 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,12 +69,73 @@
 		7B1A8FBC2CA061DC003F9F21 /* SERVER */ = {
 			isa = PBXGroup;
 			children = (
+				7B1A8FC22CA06436003F9F21 /* Presentation */,
+				7B1A8FC12CA06430003F9F21 /* Domain */,
 				7B1A8FB82CA061DC003F9F21 /* Preview Content */,
 				7B1A8FB92CA061DC003F9F21 /* Assets.xcassets */,
-				7B1A8FBA2CA061DC003F9F21 /* ContentView.swift */,
 				7B1A8FBB2CA061DC003F9F21 /* SERVERApp.swift */,
 			);
 			path = SERVER;
+			sourceTree = "<group>";
+		};
+		7B1A8FC12CA06430003F9F21 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				7B1A8FD02CA0654A003F9F21 /* Network */,
+				7B1A8FCD2CA0650D003F9F21 /* Model */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		7B1A8FC22CA06436003F9F21 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7B1A8FC72CA06499003F9F21 /* Navigation */,
+				7B1A8FC42CA06463003F9F21 /* Helper */,
+				7B1A8FC32CA06449003F9F21 /* View */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7B1A8FC32CA06449003F9F21 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7B1A8FBA2CA061DC003F9F21 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		7B1A8FC42CA06463003F9F21 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				7B1A8FC52CA06470003F9F21 /* Image.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		7B1A8FC72CA06499003F9F21 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				7B1A8FC82CA064B0003F9F21 /* NavigationRouter.swift */,
+				7B1A8FCA2CA064C3003F9F21 /* NavigationHandler.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		7B1A8FCD2CA0650D003F9F21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7B1A8FCE2CA06521003F9F21 /* ClientState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7B1A8FD02CA0654A003F9F21 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				7B1A8FD12CA06556003F9F21 /* NetworkService.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,8 +211,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B1A8FCB2CA064C3003F9F21 /* NavigationHandler.swift in Sources */,
 				7B1A8FBF2CA061DC003F9F21 /* ContentView.swift in Sources */,
+				7B1A8FC62CA06470003F9F21 /* Image.swift in Sources */,
+				7B1A8FC92CA064B0003F9F21 /* NavigationRouter.swift in Sources */,
+				7B1A8FCF2CA06521003F9F21 /* ClientState.swift in Sources */,
 				7B1A8FC02CA061DC003F9F21 /* SERVERApp.swift in Sources */,
+				7B1A8FD22CA06556003F9F21 /* NetworkService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +366,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LostMen-Yama.SERVER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,6 +399,10 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.LostMen-Yama.SERVER";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
