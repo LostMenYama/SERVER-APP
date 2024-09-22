@@ -60,14 +60,16 @@ extension NetworkService: MCSessionDelegate {
         
         switch state {
         case .notConnected:
-            break
+            print("notConnected to: \(peerID.displayName)")
         case .connecting:
             break
         case .connected:
             DispatchQueue.main.async {
                 self.isConnected = true
             }
-            
+            if localSession.connectedPeers.count < maxNumberPeers {
+                self.stopConnecting()
+            }
         @unknown default:
             fatalError("Not Handled for now")
         }
