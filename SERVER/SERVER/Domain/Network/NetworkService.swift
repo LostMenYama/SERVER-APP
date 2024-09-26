@@ -15,7 +15,7 @@ final class NetworkService: NSObject, ObservableObject {
     private let localPeerId: MCPeerID
     private let localSession: MCSession
     private let browserSession: MCNearbyServiceBrowser
-    private let maxNumberPeers = 1
+    private let maxNumberPeers = 2
     
     @Published var isConnected = false
     
@@ -67,7 +67,7 @@ extension NetworkService: MCSessionDelegate {
             DispatchQueue.main.async {
                 self.isConnected = true
             }
-            if localSession.connectedPeers.count < maxNumberPeers {
+            if localSession.connectedPeers.count == maxNumberPeers {
                 self.stopConnecting()
             }
         @unknown default:

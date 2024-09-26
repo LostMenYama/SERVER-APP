@@ -15,11 +15,15 @@ struct ContentView: View {
         VStack {
             Text("LostMen-Yama-SERVER")
             Text("Connecting...")
+            
+            Button {
+                viewModel.startConnecting()
+            } label: {
+                Text("START")
+            }
+
         }
         .padding()
-        .onAppear {
-            viewModel.startConnecting()
-        }
     }
 }
 
@@ -27,7 +31,9 @@ extension ContentView {
     class ViewModel {
         
         func startConnecting() {
-            NetworkService.shared.startConnecting()
+//            NetworkService.shared.startConnecting()
+            let mqttmanager = MQTTManager()
+            mqttmanager.connect()
         }
     }
 }

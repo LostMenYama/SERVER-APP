@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 63;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,9 +16,14 @@
 		7B1A8FCB2CA064C3003F9F21 /* NavigationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FCA2CA064C3003F9F21 /* NavigationHandler.swift */; };
 		7B1A8FCF2CA06521003F9F21 /* ClientState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FCE2CA06521003F9F21 /* ClientState.swift */; };
 		7B1A8FD22CA06556003F9F21 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FD12CA06556003F9F21 /* NetworkService.swift */; };
+		7B1A8FD52CA11B0F003F9F21 /* IoTMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B1A8FD42CA11B0F003F9F21 /* IoTMessage.swift */; };
+		7BF86EAD2CA47464004B8A36 /* MQTTService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF86EAC2CA47464004B8A36 /* MQTTService.swift */; };
+		7BF86EAF2CA49344004B8A36 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF86EAE2CA49344004B8A36 /* Environment.swift */; };
+		7D21271AF26536F41CD0A41E /* Pods_SERVER.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9A4B07A16F9D03479C72F2 /* Pods_SERVER.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C9A4B07A16F9D03479C72F2 /* Pods_SERVER.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SERVER.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1A8FA62CA061CD003F9F21 /* SERVER.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SERVER.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B1A8FB72CA061DC003F9F21 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7B1A8FB92CA061DC003F9F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -30,6 +35,11 @@
 		7B1A8FCE2CA06521003F9F21 /* ClientState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientState.swift; sourceTree = "<group>"; };
 		7B1A8FD12CA06556003F9F21 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		7B1A8FD32CA07F86003F9F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7B1A8FD42CA11B0F003F9F21 /* IoTMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IoTMessage.swift; sourceTree = "<group>"; };
+		7BF86EAC2CA47464004B8A36 /* MQTTService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTService.swift; sourceTree = "<group>"; };
+		7BF86EAE2CA49344004B8A36 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		BC6A8B9BEFBAB800AE84CC67 /* Pods-SERVER.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SERVER.release.xcconfig"; path = "Target Support Files/Pods-SERVER/Pods-SERVER.release.xcconfig"; sourceTree = "<group>"; };
+		CB16E9853804CF82B856C21B /* Pods-SERVER.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SERVER.debug.xcconfig"; path = "Target Support Files/Pods-SERVER/Pods-SERVER.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,19 +47,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7D21271AF26536F41CD0A41E /* Pods_SERVER.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		53F608C320CC1636238E715B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C9A4B07A16F9D03479C72F2 /* Pods_SERVER.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		678CD0857F1C1276E0C2226E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB16E9853804CF82B856C21B /* Pods-SERVER.debug.xcconfig */,
+				BC6A8B9BEFBAB800AE84CC67 /* Pods-SERVER.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		7B1A8F9D2CA061CD003F9F21 = {
 			isa = PBXGroup;
 			children = (
 				7B1A8FBC2CA061DC003F9F21 /* SERVER */,
 				7B1A8FA72CA061CD003F9F21 /* Products */,
+				678CD0857F1C1276E0C2226E /* Pods */,
+				53F608C320CC1636238E715B /* Frameworks */,
 			);
 			sourceTree = "<group>";
+			usesTabs = 0;
 		};
 		7B1A8FA72CA061CD003F9F21 /* Products */ = {
 			isa = PBXGroup;
@@ -83,6 +114,7 @@
 		7B1A8FC12CA06430003F9F21 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7BF86EAB2CA47452004B8A36 /* MQTT */,
 				7B1A8FD02CA0654A003F9F21 /* Network */,
 				7B1A8FCD2CA0650D003F9F21 /* Model */,
 			);
@@ -128,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				7B1A8FCE2CA06521003F9F21 /* ClientState.swift */,
+				7B1A8FD42CA11B0F003F9F21 /* IoTMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -140,6 +173,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		7BF86EAB2CA47452004B8A36 /* MQTT */ = {
+			isa = PBXGroup;
+			children = (
+				7BF86EAC2CA47464004B8A36 /* MQTTService.swift */,
+				7BF86EAE2CA49344004B8A36 /* Environment.swift */,
+			);
+			path = MQTT;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,17 +189,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7B1A8FB42CA061CE003F9F21 /* Build configuration list for PBXNativeTarget "SERVER" */;
 			buildPhases = (
+				B844D7B997EF5A197BD0281D /* [CP] Check Pods Manifest.lock */,
 				7B1A8FA22CA061CD003F9F21 /* Sources */,
 				7B1A8FA32CA061CD003F9F21 /* Frameworks */,
 				7B1A8FA42CA061CD003F9F21 /* Resources */,
+				BD218051AAAE4D7444906B71 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SERVER;
-			packageProductDependencies = (
-			);
 			productName = SERVER;
 			productReference = 7B1A8FA62CA061CD003F9F21 /* SERVER.app */;
 			productType = "com.apple.product-type.application";
@@ -178,6 +220,7 @@
 				};
 			};
 			buildConfigurationList = 7B1A8FA12CA061CD003F9F21 /* Build configuration list for PBXProject "SERVER" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -186,7 +229,6 @@
 			);
 			mainGroup = 7B1A8F9D2CA061CD003F9F21;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
 			productRefGroup = 7B1A8FA72CA061CD003F9F21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -208,6 +250,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B844D7B997EF5A197BD0281D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SERVER-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD218051AAAE4D7444906B71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SERVER/Pods-SERVER-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SERVER/Pods-SERVER-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SERVER/Pods-SERVER-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		7B1A8FA22CA061CD003F9F21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -216,10 +300,13 @@
 				7B1A8FCB2CA064C3003F9F21 /* NavigationHandler.swift in Sources */,
 				7B1A8FBF2CA061DC003F9F21 /* ContentView.swift in Sources */,
 				7B1A8FC62CA06470003F9F21 /* Image.swift in Sources */,
+				7BF86EAD2CA47464004B8A36 /* MQTTService.swift in Sources */,
 				7B1A8FC92CA064B0003F9F21 /* NavigationRouter.swift in Sources */,
+				7B1A8FD52CA11B0F003F9F21 /* IoTMessage.swift in Sources */,
 				7B1A8FCF2CA06521003F9F21 /* ClientState.swift in Sources */,
 				7B1A8FC02CA061DC003F9F21 /* SERVERApp.swift in Sources */,
 				7B1A8FD22CA06556003F9F21 /* NetworkService.swift in Sources */,
+				7BF86EAF2CA49344004B8A36 /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +434,7 @@
 		};
 		7B1A8FB52CA061CE003F9F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CB16E9853804CF82B856C21B /* Pods-SERVER.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -355,6 +443,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SERVER/Preview Content\"";
 				DEVELOPMENT_TEAM = 4GHAAG6R5U;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SERVER/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app uses local network";
@@ -383,6 +472,7 @@
 		};
 		7B1A8FB62CA061CE003F9F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC6A8B9BEFBAB800AE84CC67 /* Pods-SERVER.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -391,6 +481,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SERVER/Preview Content\"";
 				DEVELOPMENT_TEAM = 4GHAAG6R5U;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SERVER/Info.plist;
 				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app uses local network";

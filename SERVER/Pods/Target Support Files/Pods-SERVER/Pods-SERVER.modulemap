@@ -1,0 +1,6 @@
+framework module Pods_SERVER {
+  umbrella header "Pods-SERVER-umbrella.h"
+
+  export *
+  module * { export * }
+}
