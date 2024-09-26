@@ -21,19 +21,28 @@ struct ContentView: View {
             } label: {
                 Text("START")
             }
-
+            
+            Button {
+                viewModel.publishMessage()
+            } label: {
+                Text("PUBLISH MESSAGE")
+            }
         }
         .padding()
     }
 }
 
 extension ContentView {
-    class ViewModel {
+    class ViewModel: ObservableObject {
+        private var mqttManager: MQTTManager? // Retain the MQTTManager instance
         
         func startConnecting() {
-//            NetworkService.shared.startConnecting()
-            let mqttmanager = MQTTManager()
-            mqttmanager.connect()
+            mqttManager = MQTTManager()  // Instantiate and retain the MQTTManager
+            mqttManager?.connect()       // Connect to the MQTT broker
+        }
+        
+        func publishMessage() {
+            mqttManager?.publishMessage() // Publish a message using MQTTManager
         }
     }
 }
